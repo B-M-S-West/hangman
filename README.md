@@ -11,3 +11,4 @@ A project to produce the game of hangman using Python
 milestone_2.py - file that runs through the list of words and takes and checks a user input
 milestone_3.py - file that defines two functions to check user input and then see if it's in the word
 milestone_4.py - file that creates the Hangman class and then builds on the functionality of the above two files and cleans up the code
+milestone_5.py - Puts all of it together and creates a function that allows a user to play the game and will tell the if they have won or lost

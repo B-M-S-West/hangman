@@ -24,9 +24,7 @@ class Hangman:
         If the player guesses 'a', the list would be ['a', '_', '_', '_', '_']
     num_letters: int
         The number of UNIQUE letters in the word that have not been guessed yet
-    num_lives: int
-        The number of lives the player has
-    list_letters: list
+    list_of_guesses: list
         A list of the letters that have already been tried
 
     Methods:
@@ -47,7 +45,6 @@ class Hangman:
         self.num_lives = num_lives
         self.list_of_guesses = []
     
-     
     def check_guess(self, guess):
         '''
         This checks to see if the letter that has been guessed is in the word.
@@ -71,7 +68,6 @@ class Hangman:
             print(f'Sorry, {guess} is not in the word')
             print(f'You have {self.num_lives} lives left')
     
-
     def ask_for_input(self):
         '''
         Asks a letter to be input by the user and then performs the following two checks:
@@ -80,7 +76,7 @@ class Hangman:
         If both of these checks are passed, it calls the check_guess method.
         '''
         while True:
-            guess = input('Guess a single letter: ')
+            guess = input('Guess a single letter: ').lower()
             if not (len(guess) == 1 and guess.isalpha()):
                 print("Invalid letter. Please, enter a single alphabetical character.")
             elif guess in self.list_of_guesses:
@@ -91,7 +87,6 @@ class Hangman:
                 print(self.word_guessed)
             if self.num_lives == 0 or self.num_letters == 0:
                 break
-    
 
 def play_game(word_list):
     '''
@@ -109,7 +104,6 @@ def play_game(word_list):
         else:
             print('Congratulations. You won the game!')
             break
-
 
 if __name__ == '__main__':
     word_list = ['apple', 'banana', 'orange', 'pear', 'strawberry', 'watermelon']

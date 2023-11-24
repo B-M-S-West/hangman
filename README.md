@@ -27,7 +27,7 @@ To play the game:
 ## File Structure
 The project has the following structure:
 
-- `hangman.py`: This is the main Python script that you run to play the game. It contains the Hangman class and the logic for running the game.
+- `milestone_5.py`: This is the main Python script that you run to play the game. It contains the Hangman class and the logic for running the game.
 
 ## License Information
 This project is licensed under the MIT License. See the LICENSE file for details.

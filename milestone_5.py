@@ -59,7 +59,7 @@ class Hangman:
         guess = guess.lower()
         if guess in self.word:
             print(f'Good guess! {guess} is in the word.')
-            for i, letter in enumerate(self.word):
+            for i, letter in enumerate(self.word): # this is used to iterate over the letters in the word and replace the '_' with the guessed letter
                 if letter == guess:
                     self.word_guessed[i] = guess
             self.num_letters -= 1
@@ -77,9 +77,9 @@ class Hangman:
         '''
         while True:
             guess = input('Guess a single letter: ').lower()
-            if not (len(guess) == 1 and guess.isalpha()):
+            if not (len(guess) == 1 and guess.isalpha()): # checks if the character entered is a single character
                 print("Invalid letter. Please, enter a single alphabetical character.")
-            elif guess in self.list_of_guesses:
+            elif guess in self.list_of_guesses: # checks if the letter has already been guessed
                 print("You already tried that letter!")
             else:
                 self.check_guess(guess)
@@ -99,7 +99,7 @@ def play_game(word_list):
             print('You lost!')
             print(f'The word was: {game.word}')
             break
-        elif game.num_letters > 0:
+        elif game.num_letters > 0: # checks if the word has been guessed
             game.ask_for_input()
         else:
             print('Congratulations. You won the game!')

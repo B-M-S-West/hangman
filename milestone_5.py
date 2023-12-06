@@ -93,16 +93,17 @@ def play_game(word_list):
     This initialises the game with the word_list that has been created and sets the number of lives.
     Once the first guess has been had it will then keep checking to see if the game continues or if it has been won or lost.
     '''
-    num_lives = 5
-    game = Hangman(word_list, num_lives)
+    game = Hangman(word_list, num_lives = 5)
     while True:
         if game.num_lives == 0:
             print('You lost!')
+            print(f'The word was: {game.word}')
             break
         elif game.num_letters > 0:
             game.ask_for_input()
         else:
             print('Congratulations. You won the game!')
+            print(f'The word was: {game.word}')
             break
 
 if __name__ == '__main__':
